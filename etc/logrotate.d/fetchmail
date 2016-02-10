@@ -1,0 +1,9 @@
+/data/log/fetchmail.log {
+ 
+weekly
+create 0644 fetchmail adm
+rotate 4
+compress
+ 
+delaycompress
+}
