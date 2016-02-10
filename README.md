@@ -27,4 +27,4 @@ fetchmail:
   volumes:
     - ./fetchmail:/data:rw
 ```
-The fetchmail container logs the directly your mountpoint `log/fetchmail.log`
+The fetchmail container logs directly into the mountpoint `log/fetchmail.log`
