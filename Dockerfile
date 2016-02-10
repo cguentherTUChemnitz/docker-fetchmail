@@ -1,5 +1,6 @@
 FROM centos:7
 MAINTAINER cguenther.tu.chemnitz@gmail.com
+ENV REFRESHED_AT 2015_02_10
 
 #install necessary packages
 RUN yum -y update; \
