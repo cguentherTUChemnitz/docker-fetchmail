@@ -1,7 +1,7 @@
-#!/bin/bash
+#!/bin/sh
 
 while :
 do
-  fetchmail -k -f /data/etc/fetchmailrc
+  fetchmail -f /data/etc/fetchmailrc
   sleep 300
 done
