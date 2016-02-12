@@ -10,7 +10,6 @@ example:
 set no syslog
 set logfile /data/log/fetchmail.log
 
-# set username
 set postmaster "fetchmail"
 
 poll imap.gmail.com with proto IMAP
