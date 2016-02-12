@@ -6,6 +6,7 @@ create a local `etc/fetchmailrc` file and adjust it to your own needs
  - let the postmaster run as fetchmail
  - use the /data/log/fetchmail.log logging path for correct logrotate interop
 example:
+
 ```conf
 set no syslog
 set logfile /data/log/fetchmail.log
@@ -20,6 +21,7 @@ poll imap.gmail.com with proto IMAP
 
 # docker-compose example
 mount the folder, which contains the `etc/fetchmailrc` into the `/data` of the container
+
 ```yml
 fetchmail:
   restart: always
