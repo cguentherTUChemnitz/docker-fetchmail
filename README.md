@@ -16,7 +16,7 @@ set postmaster "fetchmail"
 poll imap.gmail.com with proto IMAP
   user 'someusername@gmail.com' there with password 'yourpassword' is fetchmail here options ssl
   smtphost mail.example.org
-  smtpname some.user@owndata.net
+  smtpname some.user@example.org
 ```
 
 # docker-compose example
