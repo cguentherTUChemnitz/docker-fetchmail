@@ -1,8 +1,10 @@
 # docker-fetchmail
-centos7 based fetchmail container
+alpine linux with fetchmail and logrotate
 
 # configuration
-create a local `etc/fetchmailrc` file and adjust it to your own needs, but let the postmaster run as fetchmail
+create a local `etc/fetchmailrc` file and adjust it to your own needs
+ - let the postmaster run as fetchmail
+ - use the /data/log/fetchmail.log logging path for correct logrotate interop
 example:
 ```
 set no syslog
