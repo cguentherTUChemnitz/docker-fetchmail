@@ -1,19 +1,17 @@
-FROM centos:7
+FROM alpine:3.3
 MAINTAINER cguenther.tu.chemnitz@gmail.com
-ENV REFRESHED_AT 2015_02_10
+ENV REFRESHED_AT 2015_02_12
 
 #install necessary packages
-RUN yum -y update; \
-    yum -y install fetchmail openssl logrotate cronie; \
-    yum clean all;
+RUN apk update; \
+    apk upgrade; \
+    apk add fetchmail openssl logrotate;
 
 #set workdir
 WORKDIR /data
 
-#setup fetchmail stuff
-RUN groupadd -r fetchmail; \
-    useradd -r -m -g fetchmail -s /bin/nologin -c "Fetchmail" fetchmail; \
-    chown fetchmail:fetchmail /data; \
+#setup fetchmail stuff, fetchmail user is created by installing the fetchmail package
+RUN chown fetchmail:fetchmail /data; \
     chmod 0744 /data; 
 
 #add logrotate fetchmail config
@@ -25,9 +23,8 @@ ADD fetchmail_daemon.sh /bin/fetchmail_daemon.sh
 
 #set startup script rights
 RUN chmod 0700 /bin/start.sh; \
-    chown fetchmail:fetchmail /bin/start.sh; \
     chown fetchmail:fetchmail /bin/fetchmail_daemon.sh
 
 VOLUME ["/data"]
-CMD ["/bin/start.sh"]
+CMD ["/bin/sh", "/bin/start.sh"]
 
