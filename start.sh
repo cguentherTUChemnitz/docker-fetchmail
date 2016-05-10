@@ -10,7 +10,7 @@ run()
     # run cron daemon, which executes the logrotate job
     crond
     # collect log informations for docker logs or docker-compose logs
-    tail -n 50 -f /data/log/fetchmail.log 
+    tail -n 50 -f /data/log/fetchmail.log &
     # run fetchmail as endless loop with reduced permissions
     su -s /bin/sh -c '/bin/sh /bin/fetchmail_daemon.sh' fetchmail
 }
