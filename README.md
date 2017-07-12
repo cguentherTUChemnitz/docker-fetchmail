@@ -1,4 +1,6 @@
 # docker-fetchmail
+[![](https://images.microbadger.com/badges/image/cguenther/docker-fetchmail.svg)](https://microbadger.com/images/cguenther/docker-fetchmail "Get your own image badge on microbadger.com")
+[![](https://images.microbadger.com/badges/version/cguenther/docker-fetchmail.svg)](https://microbadger.com/images/cguenther/docker-fetchmail "Get your own version badge on microbadger.com")
 alpine linux with fetchmail and logrotate
 
 ```
