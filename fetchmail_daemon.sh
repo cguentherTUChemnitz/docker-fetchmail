@@ -1,7 +1,8 @@
 #!/bin/sh
+TIMECRON1=${TIMECRON:-300}
 
 while :
 do
   fetchmail -f /data/etc/fetchmailrc
-  sleep 300
+  sleep $TIMECRON1
 done
