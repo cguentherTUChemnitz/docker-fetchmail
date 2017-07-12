@@ -1,6 +1,5 @@
-FROM alpine:3.3
+FROM alpine:latest
 MAINTAINER cguenther.tu.chemnitz@gmail.com
-ENV REFRESHED_AT 2016_02_20
 
 #install necessary packages
 RUN apk update; \
