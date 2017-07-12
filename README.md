@@ -1,6 +1,11 @@
 # docker-fetchmail
 alpine linux with fetchmail and logrotate
 
+```
+docker run -it --name fetchmail -v /fetchmail_config:/data -e TIMECRON:300 cguenther/docker-fetchmail
+```
+TIMECRON: Time to Recheck mail, if nothing set it defaults to 300 seconds (which should accept the most mail servers)
+
 # configuration
 create a local `etc/fetchmailrc` file and adjust it to your own needs
  - let the postmaster run as fetchmail
@@ -29,5 +34,7 @@ fetchmail:
   hostname: fetchmail
   volumes:
     - ./fetchmail:/data:rw
+  environment:
+   - TIMECRON=300
 ```
 The fetchmail container logs directly into the mountpoint `log/fetchmail.log`
